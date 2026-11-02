@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-17ZSGQMD4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-17ZSGQMD4G');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="When thoughts won't slow down, try a breathing practice with something to keep your mind busy. Count in a new language. Free.">
+  <link rel="canonical" href="https://count2calm.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://count2calm.com/">
+  <meta property="og:title" content="Count 2 Calm">
+  <meta property="og:description" content="When thoughts won't slow down, try a breathing practice with something to keep your mind busy. Count in a new language. Free.">
+  <meta property="og:image" content="https://count2calm.com/assets/og-image.png">
+  <meta property="og:site_name" content="Count 2 Calm">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Count 2 Calm">
+  <meta name="twitter:description" content="Breathe in rhythm. Count in a new language. A simple, free tool to quiet your mind anywhere.">
+  <meta name="twitter:image" content="https://count2calm.com/assets/og-image.png">
+<title>Count 2 Calm</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{
+  min-height:100%;
+  background:#0a6acb;
+}
+html,body{height:100%}
+body{
+  font-family:'Poppins',sans-serif;
+  min-height:100vh;color:#fff;
+  display:flex;flex-direction:column;
+  touch-action:manipulation;
+  background:transparent;
+}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;flex-shrink:0;position:sticky;top:0;z-index:100;background:#0a6acb;border-bottom:1px solid rgba(255,255,255,0.10);}
+.nav-logo{font-family:'Poppins',sans-serif;font-size:1.4rem;font-weight:600;color:white;text-decoration:none;letter-spacing:-0.02em;white-space:nowrap;}
+.nav-links{display:flex;gap:0.15rem;list-style:none;}
+.nav-links a{font-size:0.875rem;font-weight:500;letter-spacing:0.03em;text-decoration:none;color:rgba(255,255,255,0.92);padding:0.45rem 1.05rem;border-radius:100px;border:1px solid transparent;transition:color 0.2s,background 0.2s,border-color 0.2s;min-height:44px;display:flex;align-items:center;text-shadow:0 1px 3px rgba(0,0,0,0.3);white-space:nowrap;}
+.nav-links a:hover{color:white;border-color:rgba(255,255,255,0.65);background:rgba(255,255,255,0.12);}
+.nav-links a.active{background:white;color:#0a6acb;border-color:white;font-weight:600;text-shadow:none;}
+
+.hero{text-align:center;padding:3.5rem 2rem 0;flex-shrink:0}
+.hero h1{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.15;margin-bottom:1rem;letter-spacing:-0.02em}
+.hero p{font-weight:400;font-size:1.125rem;color:rgba(255,255,255,0.88);margin-bottom:0.5rem}
+.hero p:last-of-type{font-weight:300;font-size:0.95rem;color:rgba(255,255,255,0.65);margin-bottom:0;}
+
+.pill-rows{display:flex;flex-direction:column;align-items:center;gap:0.45rem;margin-top:2rem;margin-bottom:0;padding:0 1rem;flex-shrink:0}
+.pill-row{display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center}
+.pill{
+  font-size:0.8rem;font-weight:500;padding:0.35rem 1rem;border-radius:999px;
+  border:1.5px solid rgba(255,255,255,0.35);
+  background:rgba(255,255,255,0.1);color:#fff;
+  cursor:pointer;transition:all 0.2s;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+.pill.active{background:#fff;color:#0a6acb;border-color:#fff}
+
+.orb-stage{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5rem 0 0;}
+
+.orb-wrap:focus-visible{outline:3px solid rgba(255,255,255,0.8);outline-offset:8px;border-radius:50%;}
+.orb-wrap{
+  position:relative;
+  width:290px;height:290px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+
+.orb-tap-overlay{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border-radius:50%;
+  z-index:10;
+  background:transparent;
+  cursor:pointer;
+}
+
+.orb-wrap svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:visible}
+
+.inner-orb{
+  position:absolute;border-radius:50%;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  z-index:1;
+  background:radial-gradient(circle at 38% 35%,
+    rgba(255,255,255,0.32) 0%,
+    rgba(255,255,255,0.1) 55%,
+    rgba(255,255,255,0.03) 100%);
+  border:1.5px solid rgba(255,255,255,0.5);
+  pointer-events:none;
+}
+
+.orb-text{
+  position:absolute;z-index:4;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;width:100%;
+  pointer-events:none;
+}
+.t-idle-wrap{display:flex;flex-direction:column;align-items:center;gap:0.35rem}
+.t-idle{font-size:1rem;font-weight:400;color:#fff;letter-spacing:0.06em}
+.t-tap-hint{font-size:0.75rem;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.1em}
+.t-phase{font-size:0.8rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#fff;margin-bottom:5px}
+.t-word{font-size:1.75rem;font-weight:500;color:#fff;line-height:1}
+.t-phon{font-size:0.85rem;font-weight:400;color:#fff;margin-top:5px}
+.t-num{font-size:0.8rem;font-weight:500;color:#fff;margin-top:3px;letter-spacing:0.05em}
+.t-lang{font-size:0.72rem;font-weight:400;color:rgba(255,255,255,0.5);margin-top:8px;letter-spacing:0.08em;text-transform:uppercase}
+
+
+.pace-toggle{
+  display:flex;
+  background:rgba(255,255,255,0.1);
+  border:1.5px solid rgba(255,255,255,0.25);
+  border-radius:999px;
+  padding:3px;
+  gap:2px;
+}
+.pace-opt{
+  font-family:'Poppins',sans-serif;font-weight:500;
+  font-size:0.82rem;color:rgba(255,255,255,0.6);
+  background:transparent;border:none;
+  border-radius:999px;
+  padding:0.38rem 1.4rem;
+  cursor:pointer;letter-spacing:0.05em;
+  transition:all 0.2s;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  min-width:64px;
+}
+.pace-opt.active{
+  background:#fff;
+  color:#0a6acb;
+  font-weight:600;
+}
+
+.validation{
+  text-align:center;
+  padding:0.5rem 2rem 0.5rem;
+  font-size:0.8rem;
+  font-weight:300;
+  color:rgba(255,255,255,0.75);
+  line-height:1.8;
+  flex-shrink:0;
+}
+
+
+footer{
+  border-top:1px solid rgba(255,255,255,0.12);
+  padding:1.8rem 3rem;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;
+  flex-shrink:0;
+}
+.footer-tagline{font-size:0.875rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.80);}
+.footer-right{display:flex;align-items:center;gap:1.5rem;}
+.footer-right a{font-size:0.875rem;color:rgba(255,255,255,0.80);text-decoration:none;transition:color 0.2s;}
+.footer-right a:hover{color:white;}
+.footer-copy{font-size:0.875rem;color:rgba(255,255,255,0.65);}
+@media(max-width:480px){.orb-wrap{width:240px;height:240px;}.t-word{font-size:1.6rem;}}
+@media(min-height:800px){.orb-stage{max-height:540px;}}
+
+@media(max-width:480px){
+  nav{padding:0.9rem 1rem;}
+  .nav-logo{font-size:1.1rem;}
+  .nav-links a{font-size:0.78rem;padding:0.35rem 0.65rem;}
+  footer{padding:1.2rem 1rem;flex-direction:column;align-items:flex-start;gap:0.6rem;}
+  .footer-right{gap:1rem;flex-wrap:wrap;}
+}
+@media(max-width:390px){
+  nav{padding:0.75rem 0.85rem;}
+  .nav-logo{font-size:0.95rem;}
+  .nav-links a{font-size:0.72rem;padding:0.3rem 0.5rem;}
+}
+
+@media(max-width:375px){
+  nav{padding:0.65rem 0.75rem;}
+  .nav-logo{font-size:0.88rem;}
+  .nav-links a{font-size:0.68rem;padding:0.28rem 0.45rem;}
+}
+@keyframes orbPulse{
+  0%,100%{width:176px;height:176px;}
+  50%{width:184px;height:184px;}
+}
+.inner-orb.idle-pulse{
+  animation:orbPulse 3.2s ease-in-out infinite;
+}
+@media(prefers-reduced-motion:reduce){
+  .inner-orb.idle-pulse{animation:none;}
+}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Count 2 Calm",
+    "url": "https://count2calm.com",
+    "description": "A free browser-based breathing tool that combines box breathing with counting in a new language to reduce stress and quiet the mind.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": ["Box breathing", "Multilingual counting", "Stress reduction", "Mindfulness practice"],
+    "publisher": { "@type": "Organization", "name": "Count 2 Calm", "url": "https://count2calm.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Count 2 Calm",
+    "url": "https://count2calm.com",
+    "description": "A free breathing and counting practice for moments of stress, anxiety, or restlessness."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Count 2 Calm",
+    "url": "https://count2calm.com",
+    "logo": "https://count2calm.com/logo-dark.svg",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Count 2 Calm</a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="languages.html">Languages</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<main style="flex:1;display:flex;flex-direction:column;">
+<div class="hero">
+  <h1>Count your way to calm.</h1>
+  <p>Breathe in rhythm. Count in a new language.</p>
+  <p>Breathing calms the body. Counting stops racing thoughts.</p>
+</div>
+
+<div class="pill-rows">
+  <div class="pill-row">
+    <button class="pill active" aria-pressed="true">Japanese</button>
+    <button class="pill" aria-pressed="false">Spanish</button>
+    <button class="pill" aria-pressed="false">French</button>
+    <button class="pill" aria-pressed="false">Thai</button>
+  </div>
+  <div class="pill-row">
+    <button class="pill" aria-pressed="false">Hindi</button>
+    <button class="pill" aria-pressed="false">Mandarin</button>
+    <button class="pill" aria-pressed="false">Norwegian</button>
+  </div>
+</div>
+
+<div class="orb-stage">
+  <div class="orb-wrap" id="orbWrap" role="button" aria-label="Breathing exercise orb — tap to begin">
+
+    <div class="orb-tap-overlay" id="orbTap"></div>
+
+    <div class="inner-orb" id="innerOrb" style="width:157px;height:157px"></div>
+
+    <div class="orb-text">
+      <div class="t-idle-wrap" id="idleWrap">
+        <span class="t-idle">breathe</span>
+        <span class="t-tap-hint">tap to begin</span>
+        <span class="t-lang" id="langIdleEl"></span>
+      </div>
+      <div id="countText" style="display:none;flex-direction:column;align-items:center">
+        <span class="t-phase" id="phaseEl"></span>
+        <span class="t-word"  id="wordEl"></span>
+        <span class="t-phon"  id="phonEl"></span>
+        <span class="t-num"   id="numEl"></span>
+        <span class="t-lang"  id="langEl"></span>
+      </div>
+    </div>
+
+    <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="125" cy="125" r="120"
+        fill="rgba(255,255,255,0.06)"
+        stroke="rgba(255,255,255,0.28)"
+        stroke-width="1.5"/>
+      <circle id="dotHalo2" cx="125" cy="5" r="11" fill="rgba(255,255,255,0.08)" opacity="0"/>
+      <circle id="dotHalo1" cx="125" cy="5" r="8"  fill="rgba(255,255,255,0.18)" opacity="0"/>
+      <circle id="dot"      cx="125" cy="5" r="5"  fill="white"                  opacity="0"/>
+    </svg>
+
+  </div>
+
+  <div style="text-align:center;padding:1rem 2rem 0.25rem;font-size:0.95rem;font-weight:400;color:rgba(255,255,255,0.80);" id="orbStateText">Tap the orb and breathe with the words.</div>
+  <div style="display:flex;justify-content:center;padding:0.5rem 0 0.6rem;margin-top:1rem;">
+    <div class="pace-toggle">
+      <button class="pace-opt" id="pace3" aria-pressed="false">3s</button>
+      <button class="pace-opt active" id="pace4" aria-pressed="true">4s</button>
+      <button class="pace-opt" id="pace5" aria-pressed="false">5s</button>
+      <button class="pace-opt" id="pace6" aria-pressed="false">6s</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+</main>
+
+<footer>
+  <div class="footer-right">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScY1_GPv4JdL39nQ1znE_37sAYoED8TFMMrX4BvBFA9Uye3vg/viewform" target="_blank" rel="noopener">Did this help?</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="faq.html">FAQ</a>
+    <span class="footer-copy">&copy; 2026 Count 2 Calm</span>
+  </div>
+</footer>
+
+<script>
+const LANGUAGES={
+  japanese: [['ichi','ee-chee',1],['ni','nee',2],['san','sahn',3],['shi','shee',4],['go','goh',5],['roku','roh-koo',6]],
+  spanish:  [['uno','oo-noh',1],['dos','dohs',2],['tres','trehs',3],['cuatro','kwah-troh',4],['cinco','seen-koh',5],['seis','says',6]],
+  french:   [['un','uhn',1],['deux','duh',2],['trois','trwah',3],['quatre','katr',4],['cinq','sank',5],['six','sees',6]],
+  thai:     [['neung','nuhng',1],['song','sawng',2],['sam','sahm',3],['see','see',4],['haa','hah',5],['hok','hok',6]],
+  hindi:    [['ek','ehk',1],['do','doh',2],['teen','teen',3],['chaar','chahr',4],['paanch','paanch',5],['chhe','cheh',6]],
+  mandarin: [['yī','ee',1],['èr','ar',2],['sān','sahn',3],['sì','suh',4],['wǔ','woo',5],['liù','lee-oh',6]],
+  norwegian:[['én','ehn',1],['to','too',2],['tre','tray',3],['fire','fee-reh',4],['fem','fehm',5],['seks','sehks',6]],
+};
+const PHASES=[{n:'INHALE',d:4000},{n:'HOLD',d:4000},{n:'EXHALE',d:4000},{n:'HOLD',d:4000}];
+function getCycle(){return PHASES.reduce((s,p)=>s+p.d,0);}
+const RING_R=120,CX=125,CY=125;
+const ORB_MIN=176,ORB_MAX=252;
+
+const LANG_KEYS=Object.keys(LANGUAGES);
+const PILL_LANGS=['japanese','spanish','french','thai','hindi','mandarin','norwegian'];
+let currentLang=PILL_LANGS[Math.floor(Math.random()*PILL_LANGS.length)];
+
+// Cache DOM elements
+const innerOrb =document.getElementById('innerOrb');
+const idleWrap =document.getElementById('idleWrap');
+const countText=document.getElementById('countText');
+const phaseEl  =document.getElementById('phaseEl');
+const wordEl   =document.getElementById('wordEl');
+const phonEl   =document.getElementById('phonEl');
+const numEl    =document.getElementById('numEl');
+const dot      =document.getElementById('dot');
+const dotHalo1 =document.getElementById('dotHalo1');
+const dotHalo2 =document.getElementById('dotHalo2');
+const orbTap   =document.getElementById('orbTap');
+const orbStateText=document.getElementById('orbStateText');
+const langEl   =document.getElementById('langEl');
+const langIdleEl=document.getElementById('langIdleEl');
+
+function ease(t){return t<0.5?2*t*t:-1+(4-2*t)*t;}
+
+function setOrb(px){
+  innerOrb.style.width=px+'px';
+  innerOrb.style.height=px+'px';
+  const ratio=Math.max(0,Math.min(1,(px-ORB_MIN)/(ORB_MAX-ORB_MIN)));
+  innerOrb.style.opacity=0.9-0.72*ratio;
+}
+
+function showDot(p){
+  const a=p*Math.PI*2-Math.PI/2;
+  const x=CX+RING_R*Math.cos(a);
+  const y=CY+RING_R*Math.sin(a);
+  [dot,dotHalo1,dotHalo2].forEach(el=>{
+    el.setAttribute('cx',x);
+    el.setAttribute('cy',y);
+    el.setAttribute('opacity','1');
+  });
+}
+function hideDot(){
+  [dot,dotHalo1,dotHalo2].forEach(el=>el.setAttribute('opacity','0'));
+}
+
+let running=false,paused=false,acc=0,t0=null,raf=null,lastTs=0;
+
+let cycleMs=getCycle();
+
+function tick(ts){
+  if(paused)return;
+  lastTs=ts;
+  if(!t0)t0=ts;
+  const pos=(acc+(ts-t0))%cycleMs;
+  let ps=0,pi=0;
+  for(let i=0;i<PHASES.length;i++){if(pos<ps+PHASES[i].d){pi=i;break;}ps+=PHASES[i].d;}
+  const beatsPerPhase=PHASES[0].d/1000;
+  const raw=(pos-ps)/PHASES[pi].d;
+  const prog=ease(raw);
+  const beat=Math.min(Math.floor(raw*beatsPerPhase),beatsPerPhase-1);
+  const phase=PHASES[pi].n;
+  const entry=LANGUAGES[currentLang];
+  const safeEntry=entry&&entry[beat]?entry[beat]:entry[0]||['—','',''];
+  const[word,phon,num]=safeEntry;
+
+  phaseEl.textContent=phase;
+  wordEl.textContent=word;
+  phonEl.textContent=phon;
+  numEl.textContent=num;
+  phonEl.style.display=phon?'block':'none';
+
+  if(phase==='INHALE'){setOrb(ORB_MIN+(ORB_MAX-ORB_MIN)*prog);hideDot();}
+  else if(phase==='EXHALE'){setOrb(ORB_MAX-(ORB_MAX-ORB_MIN)*prog);hideDot();}
+  else if(pi===1){setOrb(ORB_MAX);if(!prefersReducedMotion)showDot(raw);else hideDot();}
+  else{setOrb(ORB_MIN);if(!prefersReducedMotion)showDot(raw);else hideDot();}
+
+  raf=requestAnimationFrame(tick);
+}
+
+function setPace(s){
+  PHASES.forEach(p=>p.d=s*1000);
+  cycleMs=getCycle();
+  [3,4,5,6].forEach(n=>{
+    const btn=document.getElementById('pace'+n);
+    btn.classList.toggle('active',n===s);
+    btn.setAttribute('aria-pressed',n===s?'true':'false');
+  });
+  if(!running||paused)return;
+  if(raf){cancelAnimationFrame(raf);raf=null;}
+  acc=0;t0=null;lastTs=0;
+  raf=requestAnimationFrame(tick);
+}
+
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function startIdle(){
+  setOrb(ORB_MIN);
+  innerOrb.classList.add('idle-pulse');
+}
+function stopIdle(){
+  innerOrb.classList.remove('idle-pulse');
+}
+
+function start(){
+  if(running)return;
+  running=true;stopIdle();
+  idleWrap.style.display='none';
+  countText.style.display='flex';
+  orbStateText.textContent='Breathing. Tap to pause.';
+  acc=0;t0=null;
+  raf=requestAnimationFrame(tick);
+}
+
+function togglePause(){
+  if(paused){
+    paused=false;acc=0;t0=null;
+    orbStateText.textContent='Breathing. Tap to pause.';
+    raf=requestAnimationFrame(tick);
+  }else{
+    paused=true;
+    if(t0)acc+=(lastTs-t0);
+    t0=null;
+    if(raf)cancelAnimationFrame(raf);
+    orbStateText.textContent='Tap to begin again.';
+  }
+}
+
+function handleAction(){
+  if(!running){start();}else{togglePause();}
+}
+
+orbTap.addEventListener('click',handleAction);
+
+const orbWrap=document.getElementById('orbWrap');
+orbWrap.setAttribute('tabindex','0');
+orbWrap.addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();handleAction();}
+});
+
+[3,4,5,6].forEach(n=>{
+  document.getElementById('pace'+n).addEventListener('click',()=>setPace(n));
+});
+
+// Init pills — set active state and language labels, reset orb on change
+document.querySelectorAll('.pill').forEach(btn=>{
+  const isActive=btn.textContent.trim().toLowerCase()===currentLang;
+  btn.classList.toggle('active',isActive);
+  btn.setAttribute('aria-pressed',isActive?'true':'false');
+
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.pill').forEach(p=>{
+      p.classList.remove('active');
+      p.setAttribute('aria-pressed','false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed','true');
+    currentLang=btn.textContent.trim().toLowerCase();
+    const name=btn.textContent.trim();
+    langEl.textContent=name;
+    langIdleEl.textContent=name;
+    // Reset orb to idle on language change
+    if(running){
+      running=false;paused=false;
+      if(raf)cancelAnimationFrame(raf);raf=null;
+      stopIdle();
+      acc=0;t0=null;lastTs=0;
+      idleWrap.style.display='flex';
+      countText.style.display='none';
+      orbStateText.textContent='Tap the orb and breathe with the words.';
+      startIdle();
+    }
+  });
+});
+
+// Set initial language label
+const activePill=document.querySelector('.pill.active');
+if(activePill){
+  const name=activePill.textContent.trim();
+  langEl.textContent=name;
+  langIdleEl.textContent=name;
+}
+
+startIdle();
+</script>
+</body>
+</html>

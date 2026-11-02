@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-17ZSGQMD4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-17ZSGQMD4G');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A personal discovery that turned into something worth sharing. If your mind won't slow down, this story is for you.">
+  <link rel="canonical" href="https://count2calm.com/about.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://count2calm.com/about.html">
+  <meta property="og:title" content="How It Started | Count 2 Calm">
+  <meta property="og:description" content="A personal discovery that turned into something worth sharing. If your mind won't slow down, this story is for you.">
+  <meta property="og:image" content="https://count2calm.com/assets/og-image.png">
+  <meta property="og:site_name" content="Count 2 Calm">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How It Started | Count 2 Calm">
+  <meta name="twitter:description" content="A personal experiment with box breathing and Norwegian numbers that became a tool for quiet. Here is how it started.">
+  <meta name="twitter:image" content="https://count2calm.com/assets/og-image.png">
+  <title>How It Started | Count 2 Calm</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      min-height: 100%;
+      background: #0a6acb;
+    }
+
+    :root {
+      --w88:   rgba(255,255,255,0.88);
+      --w80:   rgba(255,255,255,0.80);
+      --w65:   rgba(255,255,255,0.65);
+      --w12:   rgba(255,255,255,0.12);
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: transparent;
+      min-height: 100vh;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 2rem; position: sticky; top: 0; z-index: 100;
+      background: #0a6acb;
+      border-bottom: 1px solid rgba(255,255,255,0.10); flex-shrink: 0;
+    }
+    .nav-logo { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 600; color: white; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 0.15rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em;
+      text-decoration: none; color: rgba(255,255,255,0.92);
+      padding: 0.45rem 1.05rem; border-radius: 100px;
+      border: 1px solid transparent; transition: color 0.2s, background 0.2s, border-color 0.2s;
+      min-height: 44px;
+      white-space: nowrap; display: flex; align-items: center;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    .nav-links a:hover { color: white; border-color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.12); }
+    .nav-links a.active { background: white; color: #0a6acb; border-color: white; font-weight: 600; text-shadow: none; }
+
+    /* PAGE — fills remaining height so content+footer fill the screen */
+    .page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 3rem;
+    }
+
+    /* TWO-COLUMN */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      padding: 2rem 0;
+      width: 100%;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: white;
+      margin-bottom: 1.75rem;
+    }
+
+    .body-text p {
+      font-size: 1.125rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--w88);
+      margin-bottom: 1.25rem;
+      max-width: 520px;
+    }
+    .body-text p:last-child { margin-bottom: 0; }
+    .body-text em { font-style: italic; font-weight: 600; color: white; }
+
+    /* PHOTO */
+    .about-photo {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+    }
+    .about-photo img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 62%;
+    }
+    .about-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(10,80,120,0.15) 100%);
+      pointer-events: none;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1.8rem 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    .footer-tagline {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--w80);
+    }
+    .footer-right { display: flex; align-items: center; gap: 1.5rem; }
+    .footer-right a {
+      font-size: 0.875rem;
+      color: var(--w80);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-right a:hover { color: white; }
+    .footer-copy { font-size: 0.875rem; color: var(--w65); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 2rem; position: sticky; top: 0; z-index: 100;
+      background: #0a6acb;
+      border-bottom: 1px solid rgba(255,255,255,0.10); flex-shrink: 0;
+    }
+      .nav-links a {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em;
+      text-decoration: none; color: rgba(255,255,255,0.92);
+      padding: 0.45rem 1.05rem; border-radius: 100px;
+      border: 1px solid transparent; transition: color 0.2s, background 0.2s, border-color 0.2s;
+      min-height: 44px;
+      white-space: nowrap; display: flex; align-items: center;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+      .page { padding: 0 1.5rem; align-items: flex-start; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 0; }
+      .about-photo { order: -1; }
+      .about-photo img { aspect-ratio: 4 / 3; object-position: center 85%; }
+      .body-text p { max-width: 100%; }
+      footer { padding: 1.5rem 1.25rem; }
+    }
+    @media (max-width: 400px) {
+      .nav-links a {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em;
+      text-decoration: none; color: rgba(255,255,255,0.92);
+      padding: 0.45rem 1.05rem; border-radius: 100px;
+      border: 1px solid transparent; transition: color 0.2s, background 0.2s, border-color 0.2s;
+      min-height: 44px;
+      white-space: nowrap; display: flex; align-items: center;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    }
+
+    .about-content { animation: fadeUp 0.65s ease both; }
+    .about-photo   { animation: fadeUp 0.65s ease both 0.15s; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  
+/* Reduced motion — respects OS accessibility setting */
+@media (prefers-reduced-motion: reduce) {
+  .inner-orb { transition: none !important; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+@media(max-width:480px){
+  nav{padding:0.9rem 1rem;}
+  .nav-logo{font-size:1.1rem;}
+  .nav-links a{font-size:0.78rem;padding:0.35rem 0.65rem;}
+  footer{padding:1.2rem 1rem;flex-direction:column;align-items:flex-start;gap:0.6rem;}
+  .footer-right{gap:1rem;flex-wrap:wrap;}
+}
+@media(max-width:390px){
+  nav{padding:0.75rem 0.85rem;}
+  .nav-logo{font-size:0.95rem;}
+  .nav-links a{font-size:0.72rem;padding:0.3rem 0.5rem;}
+}
+
+@media(max-width:375px){
+  nav{padding:0.65rem 0.75rem;}
+  .nav-logo{font-size:0.88rem;}
+  .nav-links a{font-size:0.68rem;padding:0.28rem 0.45rem;}
+}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Count 2 Calm",
+    "url": "https://count2calm.com",
+    "description": "A free breathing tool combining box breathing with multilingual counting to reduce stress and quiet the mind."
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Count 2 Calm</a>
+    <ul class="nav-links">
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="languages.html">Languages</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+  </nav>
+
+  <main style="flex:1;display:flex;flex-direction:column;"><div class="page">
+    <div class="about-grid">
+
+      <div class="about-content">
+        <h1>How it started</h1>
+        <div class="body-text">
+          <p>For years I've felt anxiety before moments when I needed to be calm and focused. My heart would race. My thoughts would speed up. Sometimes it was hard to find my words.</p>
+          <p>Over time I built a toolbox. Breathing techniques, mindfulness practices, things I learned and kept coming back to. Box breathing, a simple 4-count technique, became one of my favorites.</p>
+          <p>One evening, lying still, trying to quiet my mind, thoughts came rushing in as they always do. I tried to focus on something peaceful and found myself remembering a recent trip to Scandinavia. The water. The open sky. The quiet. What if I counted in Norwegian instead of English?</p>
+          <p>I learned the words and tried it. It worked. The slight effort to recall them kept stray thoughts from drifting in, a kind of cognitive noise cancellation. Something I could rely on and come back to.</p>
+          <p>I hope this helps you the way it helps me.</p>
+        </div>
+      </div>
+
+      <div class="about-photo">
+        <img src="assets/about-photo.webp" alt="A lone boat on a Norwegian fjord, green mountains and a waterfall reflected in still water" loading="lazy">
+      </div>
+
+    </div>
+  </div>
+
+  </main>
+
+  <footer>
+  <div class="footer-right">
+      
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScY1_GPv4JdL39nQ1znE_37sAYoED8TFMMrX4BvBFA9Uye3vg/viewform" target="_blank" rel="noopener">Did this help?</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="faq.html">FAQ</a>
+      <span class="footer-copy">&copy; 2026 Count 2 Calm</span>
+    </div>
+  </footer>
+
+</body>
+</html>

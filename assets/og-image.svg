@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ab898"/>
+      <stop offset="30%" stop-color="#0a9e8a"/>
+      <stop offset="60%" stop-color="#0a7ab8"/>
+      <stop offset="100%" stop-color="#0a6acb"/>
+    </linearGradient>
+    <linearGradient id="orb" cx="38%" cy="35%" r="50%" fx="38%" fy="35%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.32)"/>
+      <stop offset="55%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Orb -->
+  <circle cx="860" cy="315" r="220" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.20)" stroke-width="1.5"/>
+  <circle cx="860" cy="315" r="155" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <circle cx="860" cy="315" r="80" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+
+  <!-- Logo text -->
+  <text x="96" y="260" font-family="Georgia, serif" font-size="72" font-weight="400" fill="white" letter-spacing="-1">Count 2 Calm</text>
+
+  <!-- Divider -->
+  <line x1="96" y1="295" x2="540" y2="295" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+
+  <!-- Tagline -->
+  <text x="96" y="345" font-family="Arial, sans-serif" font-size="28" font-weight="300" fill="rgba(255,255,255,0.82)" letter-spacing="0.5">Breathe in rhythm.</text>
+  <text x="96" y="385" font-family="Arial, sans-serif" font-size="28" font-weight="300" fill="rgba(255,255,255,0.82)" letter-spacing="0.5">Count in a new language.</text>
+
+  <!-- URL -->
+  <text x="96" y="520" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="rgba(255,255,255,0.5)" letter-spacing="1">count2calm.com</text>
+</svg>
